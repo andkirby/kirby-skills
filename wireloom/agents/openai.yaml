@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wireloom"
+  short_description: "Author UI wireframes in Wireloom syntax"
+  default_prompt: "Use $wireloom to mock up this UI as a valid Wireloom wireframe."
