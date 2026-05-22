@@ -97,7 +97,7 @@ Mockups are Markdown files by default. They may contain embedded `wireloom` fenc
 
 Each surface gets one spec file and one mockup file unless the project convention says otherwise:
 
-```md
+````md
 # Surface Name — Wireframe Schema
 Related spec: `surface-name.spec.md`
 
@@ -108,11 +108,11 @@ window "Surface — Default":
   panel:
     text "Real product copy"
 ```
+````
 
 ## Annotations
 | Element | Token | Class | Notes |
 |---------|-------|-------|-------|
-```
 
 ### Rules
 
