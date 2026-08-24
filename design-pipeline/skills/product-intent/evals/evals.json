@@ -1,0 +1,48 @@
+[
+  {
+    "name": "greenfield-idea-to-intent",
+    "prompt": "We are building a lightweight engineering document manager. Engineers need to find technical files, continue recent work, review changes, and know what needs attention. Create the upstream product intent for an MVP.",
+    "must": [
+      "express user intentions as outcomes rather than UI actions",
+      "derive implementation-neutral capabilities",
+      "separate MVP from later/out scope",
+      "avoid inventing navigation or screen composition",
+      "identify consequential assumptions"
+    ],
+    "must_not": [
+      "design a sidebar",
+      "choose tabs or menus",
+      "specify component styling"
+    ]
+  },
+  {
+    "name": "reconstruct-existing-product",
+    "prompt": "This existing app has Projects, Recent, Search, Reviews, Settings and a document editor. Reconstruct the product intent before we redesign its information architecture. There is little user research.",
+    "must": [
+      "treat current UI as implementation evidence, not proof of user intent",
+      "label inferred/assumed intentions",
+      "derive a compact intention-capability map",
+      "avoid preserving every current destination as a justified capability"
+    ],
+    "fixture": "evals/fixtures/existing-app"
+  },
+  {
+    "name": "feature-request-challenge",
+    "prompt": "Add an AI Summary page to the product intention map because stakeholders asked for it.",
+    "must": [
+      "ask what user intention/outcome the capability serves or mark that link as unsupported",
+      "avoid automatically turning the requested page into a product intention",
+      "distinguish capability from destination"
+    ]
+  },
+  {
+    "name": "negative-trigger-local-ui",
+    "prompt": "Make the sidebar spacing tighter and reduce the icon size.",
+    "must": [
+      "recognize this is not product-intent work"
+    ],
+    "must_not": [
+      "create or modify an intention map"
+    ]
+  }
+]

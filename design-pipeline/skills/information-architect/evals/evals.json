@@ -1,0 +1,63 @@
+[
+  {
+    "name": "greenfield-from-intention-map",
+    "prompt": "Given an intention map for engineers who need to resume recent work, find documents, manage projects, review changes, and see what needs attention, design the information architecture for a small MVP.",
+    "must": [
+      "derive a conceptual/object model before navigation UI",
+      "distinguish global, contextual, utility, and any justified cross-cutting destinations",
+      "trace primary intentions through the structure",
+      "derive navigation after destination hierarchy",
+      "leave screen composition to downstream UX specification"
+    ],
+    "must_not": [
+      "start with sidebar styling",
+      "specify spacing/colors/component anatomy"
+    ],
+    "fixture": "evals/fixtures/greenfield"
+  },
+  {
+    "name": "existing-messy-app-reconstruct-first",
+    "prompt": "The app currently has sidebar items Home, Projects, Tasks, Reviews, Documents, Recent, Favorites, Search and Settings, plus project tabs Overview, Tasks, Files, Activity. Improve the navigation.",
+    "must": [
+      "reconstruct the actual conceptual/destination model before proposing new navigation",
+      "identify mixed global/contextual ownership and duplicate concepts",
+      "map destinations to upstream intentions/capabilities",
+      "preserve coherent existing conventions where possible"
+    ],
+    "must_not": [
+      "merely rearrange sidebar items"
+    ],
+    "fixture": "evals/fixtures/existing-messy"
+  },
+  {
+    "name": "ambiguous-review-ownership",
+    "prompt": "We need Reviews. They can belong to a document, a project, and also appear in a user's work queue. Decide where Reviews should live.",
+    "must": [
+      "model the Review object and its relationships/ownership",
+      "distinguish object ownership from navigation entry points",
+      "consider materially different architectures",
+      "explain trade-offs and converge on a recommendation"
+    ],
+    "must_not": [
+      "assume one sidebar destination solves all contexts"
+    ]
+  },
+  {
+    "name": "action-is-not-destination",
+    "prompt": "Add Create Task, Export, Open Items, and Settings to the main navigation.",
+    "must": [
+      "classify each requested item as action, status/filter, or destination before placing it",
+      "challenge navigation items that are not true destinations"
+    ]
+  },
+  {
+    "name": "negative-trigger-screen-layout",
+    "prompt": "On the document screen, should the inspector panel be 320px or 360px wide and should comments be tabs or an accordion?",
+    "must": [
+      "recognize this is primarily surface specification rather than cross-surface information architecture"
+    ],
+    "must_not": [
+      "rewrite the product IA without evidence of a structural issue"
+    ]
+  }
+]

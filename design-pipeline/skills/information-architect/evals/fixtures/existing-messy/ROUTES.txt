@@ -1,0 +1,13 @@
+/
+/projects
+/projects/:projectId
+/projects/:projectId/tasks
+/projects/:projectId/files
+/projects/:projectId/activity
+/tasks
+/reviews
+/documents
+/recent
+/favorites
+/search
+/settings

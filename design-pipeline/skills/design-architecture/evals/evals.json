@@ -1,0 +1,29 @@
+{
+  "skill_name": "design-architecture",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We have an existing React/Tailwind app with shadcn-style primitives, scattered raw colors, light/dark mode, and no design docs. Establish a design architecture without replacing our stack or generating lots of documentation.",
+      "expected_output": "Inspects existing tokens/components first, preserves coherent conventions, proposes a minimal .design/DESIGN_SYSTEM.md and decisions log, consolidates semantic theme roles, and identifies high-leverage architectural fixes rather than creating a new component library.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Audit this dashboard UI architecture. I suspect engineers have started making local copies of buttons and using raw hex colors. Prioritize what matters instead of giving me a cosmetic review.",
+      "expected_output": "Findings are severity-ranked, distinguish system violations from polish, focus on duplicated canonical controls and semantic-token bypasses, and propose root-level corrections before local styling fixes.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "We need a split button for Publish with a dropdown for Publish and archive / Schedule. Should I create a new component? Apply our design-system architecture and tell me what to change.",
+      "expected_output": "Searches existing button/menu primitives, reasons from semantic and keyboard behavior, prefers composition or a justified reusable component rather than visual duplication, defines states/focus/error behavior, and updates project documentation only if the shared contract changes.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Review a dense desktop-first document manager for engineers: file tree, search, table, review status, comments, version history, keyboard shortcuts, and light/dark themes. We want long-session usability, not a sparse marketing-dashboard aesthetic.",
+      "expected_output": "Preserves useful density, evaluates scanning/comparison and workflow context before decoration, checks power-user navigation and state visibility, enforces semantic tokens/components/themes, and includes keyboard/focus/accessibility without automatically enlarging or card-ifying the interface.",
+      "files": []
+    }
+  ]
+}

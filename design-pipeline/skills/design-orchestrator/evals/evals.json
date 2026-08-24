@@ -1,0 +1,90 @@
+[
+  {
+    "name": "route_local_surface_without_pipeline_restart",
+    "fixture": null,
+    "prompt": "The Documents page already exists and its place in navigation is settled. Improve its empty state and loading behavior.",
+    "must": [
+      "route the task to ux-designer-specifier",
+      "avoid rerunning product-intent",
+      "avoid rerunning information-architect unless a real upstream ambiguity is discovered"
+    ],
+    "must_not": [
+      "redesign the global navigation",
+      "create a new intention map",
+      "run a design-system audit by default"
+    ]
+  },
+  {
+    "name": "route_navigation_ownership_to_information_architecture",
+    "fixture": "fixtures/existing-app",
+    "prompt": "Reviews currently appear under Projects, Documents, and My Work. Our navigation feels messy. Decide where Reviews should live and how users should reach them.",
+    "must": [
+      "identify this as an information-architecture decision",
+      "reconstruct existing ownership before prescribing navigation",
+      "check whether product intent already establishes Reviews as a capability",
+      "use information-architect as the primary specialist"
+    ],
+    "must_not": [
+      "start by choosing sidebar items",
+      "treat the existing route tree as proof of correct IA",
+      "route directly to ux-designer-specifier as a local screen problem"
+    ]
+  },
+  {
+    "name": "backtrack_from_ia_to_product_intent",
+    "fixture": "fixtures/greenfield",
+    "prompt": "Add an Analytics section to the product navigation. I am not sure who needs analytics or what decision it helps them make.",
+    "must": [
+      "identify an unresolved product-intent dependency",
+      "route or backtrack to product-intent before deciding IA",
+      "avoid inventing analytics value merely to justify a destination"
+    ],
+    "must_not": [
+      "add Analytics to global navigation immediately",
+      "invent personas or research findings"
+    ]
+  },
+  {
+    "name": "cross_cutting_design_architecture_escalation",
+    "fixture": null,
+    "prompt": "While specifying three new screens, we found each team has made its own compact button and status badge. We need to stop the drift before implementing more screens.",
+    "must": [
+      "identify a cross-cutting design-architecture problem",
+      "route shared component/token/pattern governance to design-architecture",
+      "allow local UX specification to resume after the system decision"
+    ],
+    "must_not": [
+      "treat this as information architecture",
+      "solve the problem by documenting three more page-local variants"
+    ]
+  },
+  {
+    "name": "end_to_end_raw_idea_uses_pipeline_proportionally",
+    "fixture": "fixtures/greenfield",
+    "prompt": "We have a rough idea for a small engineering review tool. Take it from the idea to a UX structure we can start implementing, but keep the process MVP-sized.",
+    "must": [
+      "start with product-intent because upstream intent is unresolved",
+      "continue to information-architect after the intent gate passes",
+      "use ux-designer-specifier only for concrete implementation-ready surfaces/flows",
+      "apply proportional rigor rather than mandatory workshops",
+      "use design-architecture only if cross-cutting system decisions are needed"
+    ],
+    "must_not": [
+      "require every possible UX framework",
+      "create pipeline status documentation by default",
+      "run every specialist regardless of whether the requested outcome needs it"
+    ]
+  },
+  {
+    "name": "negative_trigger_single_design_system_task",
+    "fixture": null,
+    "prompt": "Audit our semantic color tokens and shared button variants for architecture drift.",
+    "must": [
+      "recognize that design-architecture clearly owns the task"
+    ],
+    "must_not": [
+      "turn the request into a multi-stage product-design pipeline",
+      "reconstruct product intent or information architecture"
+    ]
+  }
+]

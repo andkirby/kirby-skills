@@ -1,0 +1,16 @@
+Global sidebar:
+- Home
+- Projects
+- Tasks
+- Reviews
+- Documents
+- Recent
+- Favorites
+- Search
+- Settings
+
+Inside project:
+- Overview
+- Tasks
+- Files
+- Activity
