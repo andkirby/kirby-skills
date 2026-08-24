@@ -70,3 +70,20 @@ Wireloom can add syntax faster than this skill is updated. When in doubt, trust 
 2. Update `references/grammar.md`.
 3. Add or adjust a small `SKILL.md` routing note only if the new syntax changes authoring behavior.
 4. Re-run validation.
+
+## Upstream Alignment Log
+
+Record skill syncs here with the upstream Wireloom version or commit that justified the change.
+
+- **2026-06-08 — aligned to Wireloom v0.7.0 / `c26c875` (`main`)**
+  - Added v0.7.0 parser/layout drift to the skill docs:
+    - `spacer` is legal in `row`, `col`, and `footer`
+    - `col` supports `justify=start|between|around|end`
+    - top-level `panel` accepts one trailing `footer:` block as authoring sugar and normalizes it to window footer chrome
+  - Updated `SKILL.md`, `references/grammar.md`, and `references/wireloom-best-practices.md`.
+  - Corrected pre-existing doc inaccuracies discovered during verification:
+    - replaced invalid `row justify=center` example with `row align=center`
+    - clarified that only string-valued attributes require quotes
+  - Re-validated with:
+    - `node scripts/validate_skill_coverage.js /Users/kirby/home/Wireloom`
+    - `python3 /Users/kirby/.codex/skills/.system/skill-creator/scripts/quick_validate.py /Users/kirby/home/my-skills/wireloom`

@@ -17,7 +17,7 @@ Use this file for exact Wireloom syntax. It is a compact parser-facing reference
 |---|---|---|---|---|
 | `window` | optional title string | root only | `id` | - |
 | `header` | - | direct child of `window`; general children | `id` | `large` |
-| `footer` | - | direct child of `window`, or final child of `slot`; general children | `id` | - |
+| `footer` | - | direct child of `window`, final child of `slot`, or trailing `footer:` in a top-level `panel` (authoring sugar) | `id` | - |
 | `navbar` | - | direct child of `window`; `leading`, `center`, `trailing` only | `id` | - |
 | `leading` | - | inside `navbar`; general children | `id` | - |
 | `center` | - | inside `navbar`; general children | `id` | - |
@@ -30,8 +30,8 @@ Use this file for exact Wireloom syntax. It is a compact parser-facing reference
 | `tabbar` | - | direct child of `window`; `tabitem` only | `id` | - |
 | `tabitem` | label string | inside `tabbar` only | `id`, `icon`, `badge` | `selected`, `disabled` |
 | `row` | - | general children plus `spacer` | `id`, `align`, `justify` | - |
-| `spacer` | - | inside `row` only | `id` | - |
-| `col` | optional pixel width or `fill` | general children | `id` | - |
+| `spacer` | - | inside `row`, `col`, or `footer` | `id` | - |
+| `col` | optional pixel width or `fill` | general children plus `spacer` | `id`, `justify` | - |
 | `list` | - | `item` or `slot` only | `id` | - |
 | `item` | text string | inside `list` only | `id` | `chevron` |
 | `slot` | title string | inside `list` or general containers; general children; optional final `footer` | `id`, `state`, `accent` | `active`, `chevron` |
@@ -125,10 +125,11 @@ Unknown icon names fall back to a boxed first-letter glyph.
 - `node` may only appear inside `tree`.
 - `menuitem` and `separator` may only appear inside `menu`.
 - `crumb` may only appear inside `breadcrumb`.
-- `spacer` may only appear inside `row`.
+- `spacer` may appear only inside `row`, `col`, or `footer`.
 - `segment` may only appear inside `segmented`.
 - `segmented` may not be a direct child of `window`; put it inside `panel`, `section`, or `row`.
 - `slot` may contain one nested `footer:` block, and that `footer:` must be last.
+- A top-level `panel` may include at most one trailing `footer:` block; it is desugared into a window-level `footer`.
 - `segmented` allows at most one `segment selected`.
 
 ## Common Forms

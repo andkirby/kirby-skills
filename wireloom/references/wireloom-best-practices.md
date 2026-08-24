@@ -46,12 +46,20 @@ Name files `{surface}-{variant}.wireloom` where the variant describes what's dif
 Good annotations explain *why* or point out non-obvious behavior:
 
 ```wireloom
+window "Sort":
+  panel:
+    combo value="Sort by Key" id="sort-slot"
+
 annotation "Sort controls appear here on mobile only" target="sort-slot" position=right
 ```
 
 Bad annotations describe what the diagram already shows:
 
 ```wireloom
+window "Sort":
+  panel:
+    divider id="sort-slot"
+
 annotation "This is a divider" target="sort-slot" position=right
 ```
 
@@ -76,31 +84,53 @@ Both are valid for hamburger menu items. `list` > `item` is closer to most real 
 
 Use `section "Title":` to create labeled groups inside forms and settings panels. Don't use bare `panel` nesting to fake sections.
 
-### `row` + `spacer` for layout
+### `row` / `col` + `spacer` for layout
 
 Opposite-edge alignment:
 
 ```wireloom
-row:
-  button "Cancel"
-  spacer
-  button "Save" primary
+window:
+  row:
+    button "Cancel"
+    spacer
+    button "Save" primary
 ```
 
 Centered content:
 
 ```wireloom
-row justify=center:
-  button "OK" primary
+window:
+  row align=center:
+    button "OK" primary
 ```
 
-### Attribute values must be quoted
+Vertical content pinning in a column:
 
-The parser requires string values for all attributes:
+```wireloom
+window:
+  row:
+    col:
+      text "Top"
+      spacer
+      text "Bottom"
+    col:
+      text "L1"
+      text "L2"
+      text "L3"
+      text "L4"
+```
+
+
+### Quote string-valued attributes
+
+String-valued attributes must be quoted. Numeric and enum/identifier values stay unquoted.
 
 ```
 ✗  icon name=star
 ✓  icon name="star"
+
+✓  input placeholder="Email" type=email
+✓  slider range=0-100 value=42
 ```
 
 ## File Organization

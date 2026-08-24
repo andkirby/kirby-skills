@@ -58,6 +58,10 @@ Use Wireloom to produce low-fidelity UI wireframes as `wireloom` fenced code blo
 - Strings use double quotes. Positional strings come before attributes/flags.
 - Attributes use `key=value`; flags are bare words: `button "Save" primary disabled`.
 - `id="..."` is universal and mainly used as an annotation target.
+- `spacer` works in `row` and `col` for edge anchoring (`justify` is the row/col axis equivalent).
+  - `row` supports `justify=start|between|around|end`.
+  - `col` also supports `justify=start|between|around|end` for vertical distribution (`justify=end` is the common “pin to bottom” case).
+  - `footer` supports `spacer` to spread left/right action clusters.
 
 ## Annotations
 
@@ -85,7 +89,7 @@ Annotation rules:
 
 ## Layout Patterns
 
-Use `spacer` or `row justify=between` for opposite-edge alignment:
+Use `spacer` or `row justify=between` for opposite-edge alignment in a horizontal row:
 
 ```wireloom
 window "Dialog":
@@ -94,6 +98,22 @@ window "Dialog":
       button "Cancel"
       spacer
       button "Done" primary
+```
+
+Use `spacer` in a taller column to pin top/bottom content:
+
+```wireloom
+window "Pinned list":
+  row:
+    col:
+      text "Top"
+      spacer
+      text "Bottom"
+    col:
+      text "L1"
+      text "L2"
+      text "L3"
+      text "L4"
 ```
 
 Mobile detail with centered title:
@@ -136,5 +156,7 @@ window "Settings":
 | `navbar` and `header` in one window | Pick one top chrome primitive |
 | `tabbar` and `footer` in one window | Pick one bottom chrome primitive |
 | `sheet` inside `panel` | Put `sheet` directly under `window` |
+| `spacer` outside `row`/`col`/`footer` | Keep `spacer` in `row`, `col`, or `footer` |
+| `footer` at top-level panel but not trailing or duplicated | Keep `footer:` as trailing child of top-level `panel`; only one total window-level footer allowed |
 | Multiple `segment selected` | Pick one selected segment |
 | `segmented` directly under `window` | Put it inside `panel`, `section`, or `row` |
