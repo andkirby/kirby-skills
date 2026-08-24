@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Python (design_smell_scan.py and future tooling)
+__pycache__/
+*.py[cod]
+
+# Editors
+.idea/
+.vscode/
+*.swp
