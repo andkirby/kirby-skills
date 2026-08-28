@@ -1,0 +1,4 @@
+interface:
+  display_name: "Controlled Refactor"
+  short_description: "Evidence-backed refactors with documentation gates"
+  default_prompt: "Use $controlled-refactor to assess and safely refactor this hotspot while preserving behavior and reconciling owner documentation."

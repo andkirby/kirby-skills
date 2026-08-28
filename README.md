@@ -4,6 +4,7 @@
 
 | Skill | Purpose |
 |---|---|
+| controlled-refactor | Assess and execute behavior-preserving refactors with evidence, documentation reconciliation, and authorization gates |
 | ux-designer-specifier | Write UX specs and wireframe schemas, supports ASCII and Wireloom wireframes (requires Wireloom skill below) |
 | wireloom | Author Wireloom UI wireframe mockups |
 
