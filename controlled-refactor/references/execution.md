@@ -9,10 +9,13 @@ Use this reference only after mutation is authorized.
 - Preserve unrelated user changes. For unattended or scheduled mutation, use an
   isolated workspace pinned to the approved baseline; never mutate a shared
   working checkout.
-- Resolve allowed paths explicitly. Do not use broad cleanup, formatting, or
-  dependency updates to hide the refactor.
+- Resolve production mutation paths and artifact-write paths explicitly. Do not
+  use broad cleanup, formatting, or dependency updates to hide the refactor.
 - Confirm that every planned owner-document edit is explicitly included in the
   allowed paths. Snapshot the affected claims before mutation.
+- For scheduled mutation or another durable run, confirm that the immutable
+  `plan.md` exists in the selected artifact owner before changing production
+  files.
 - Run the approved baseline checks before changing production code.
 
 If the environment cannot provide isolation, baseline identity, or reliable
@@ -96,9 +99,11 @@ Use project-owned commands. As applicable, verify:
 - project-owned documentation lint, link, diagram, snippet, or build checks for
   changed documentation; when none exist, re-read and report the exact claims
   manually verified;
+- one result for every acceptance ID, linked to executed evidence;
 - executed test count, failures, unexpected skips, and exit codes;
-- final status and change set against the recorded baseline, including untracked
-  or otherwise unregistered files.
+- final production change set against mutation intent and artifact change set
+  against its separate allowlist, including untracked or otherwise unregistered
+  files.
 
 `PATCH_READY` means the patch is ready for human review, not permission to commit,
 merge, publish, or deploy. If verification is partial, say exactly what remains

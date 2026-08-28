@@ -41,18 +41,25 @@ evidence does not prove which method or component is responsible.
 
 ## Select applicable quality dimensions
 
-Do not mechanically score every category. Examine the ones the target can affect:
+Do not mechanically score every category. Examine only dimensions the target can
+affect:
 
-| Dimension | Evidence to seek |
-| --- | --- |
-| Behavior and compatibility | Public outputs, errors, side effects, schemas, file formats, CLI or API contracts |
-| Architecture and data | Ownership, cohesion, dependencies, data flow, state transitions, special cases |
-| Maintainability | Churn, coupling, duplication, naming, complexity, test seams, change surface |
-| Performance and resources | Latency, throughput, allocations, memory, I/O, queries, bundle or startup cost |
-| Reliability | Concurrency, ordering, cancellation, idempotence, retries, partial failure, recovery |
-| Security and privacy | Trust boundaries, authorization, validation, secret or sensitive-data flow |
-| Operability | Logs, metrics, tracing, configuration, migration, rollback, deployment behavior |
-| UX and accessibility | User-visible flow, focus, semantics, responsiveness, assistive behavior |
+- **Behavior and compatibility:** outputs, errors, side effects, schemas, file
+  formats, and CLI or API contracts.
+- **Architecture and data:** ownership, cohesion, dependencies, data flow, state
+  transitions, and special cases.
+- **Maintainability:** churn, coupling, duplication, naming, complexity, test
+  seams, and change surface.
+- **Performance and resources:** latency, throughput, allocations, memory, I/O,
+  queries, bundle size, and startup cost.
+- **Reliability:** concurrency, ordering, cancellation, idempotence, retries,
+  partial failure, and recovery.
+- **Security and privacy:** trust boundaries, authorization, validation, and
+  secret or sensitive-data flow.
+- **Operability:** logs, metrics, tracing, configuration, migration, rollback,
+  and deployment behavior.
+- **UX and accessibility:** visible flow, focus, semantics, responsiveness, and
+  assistive behavior.
 
 Do not claim improvement without before/after evidence appropriate to the
 dimension. If a consequential risk cannot be observed, select `NEEDS_APPROVAL`
@@ -64,6 +71,17 @@ Identify the smallest set of observable invariants that defines preservation.
 Map each invariant to existing evidence. If critical behavior is untested, plan
 characterization tests before structural changes; never encode a suspected bug
 as the desired contract without confirmation.
+
+Convert the preservation boundary into acceptance criteria with stable IDs.
+Reference public or product behavior from its canonical project owner rather
+than copying and redefining it. Define refactor-specific gates, such as bounded
+mutation, maintainability improvement, documentation reconciliation, and
+applicable performance limits, in the refactor plan. Tests and probes are
+evidence for criteria, not automatically their owners.
+
+If no canonical behavior owner exists, confirmed observable invariants may be
+owned by this refactor plan for this change only. If the intended behavior is
+uncertain, use `STOP` or `NEEDS_APPROVAL`; do not manufacture acceptance criteria.
 
 Baseline checks must run before mutation. Distinguish:
 
@@ -109,7 +127,8 @@ solution requires redesign or observable behavior change, return
 The plan must state:
 
 - target and exclusions;
-- invariants and public contracts;
+- invariants, public contracts, and acceptance criteria with stable IDs and
+  owners;
 - current structural problem and evidence;
 - proposed boundary or transformation;
 - local precedent and applicable established alternatives, or why comparison is
