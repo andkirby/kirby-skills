@@ -1,15 +1,27 @@
 # Kirby's skills
 
-## Skills
+## Standalone skills
 
-| Skill | Purpose |
-|---|---|
-| controlled-refactor | Assess and execute behavior-preserving refactors with evidence, documentation reconciliation, and authorization gates |
-| ux-designer-specifier | Write UX specs and wireframe schemas, supports ASCII and Wireloom wireframes (requires Wireloom skill below) |
-| wireloom | Author Wireloom UI wireframe mockups |
+- **commit** — Prepare focused conventional commits while preserving unrelated
+  working-tree changes.
+- **controlled-refactor** — Assess and execute behavior-preserving refactors
+  with evidence, documentation reconciliation, and authorization gates.
+- **documentation-onboarding** — Establish a minimal, durable documentation
+  system with clear ownership, agent reachability, and incremental maintenance.
+- **idea-intake** — Capture and challenge ideas before promoting them to
+  committed work.
+- **wireloom** — Author Wireloom UI wireframe mockups.
 
-You may add a project specific skill. Just tell your agent:
-> Build a local "ux designer" skill which shall load `ux-designer-specifier` with project specific instructions.
+## Plugin packages
+
+- **design-pipeline** — Route product intent, information architecture, UX
+  specification, and design-system work through focused specialist skills.
+
+After installing `design-pipeline`, you may add a project-specific skill. Tell
+your agent:
+
+> Build a local "ux designer" skill which shall load `ux-designer-specifier`
+> with project specific instructions.
 
 ## Contributions
 
@@ -29,5 +41,5 @@ npx skills add https://github.com/andkirby/kirby-skills
 
 ### Manual. Symlinks
 
-- To add a skill: `ln -s $(pwd)/<name> ~/.agents/skills/<name>`
-- To add all: `ln -s $(pwd)/*/ ~/.agents/skills/`
+- To add a standalone skill:
+  `ln -s "$(pwd)/<name>" ~/.agents/skills/<name>`
