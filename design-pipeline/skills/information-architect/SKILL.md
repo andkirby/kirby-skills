@@ -1,6 +1,6 @@
 ---
 name: information-architect
-description: Defines or audits cross-surface information architecture from established product intent: conceptual model, core objects and relationships, destination hierarchy, contexts, entry points, labeling, and navigation architecture. Use when deciding how a product is organized, where capabilities belong, how users orient and move across areas, or when reconstructing/auditing an existing product structure. Do not use for product-strategy or intention discovery, detailed screen composition, visual styling, component implementation, or local UI tweaks.
+description: Defines or audits cross-surface information architecture from established product intent, conceptual model, core objects and relationships, destination hierarchy, contexts, entry points, labeling, and navigation architecture. Use when deciding how a product is organized, where capabilities belong, how users orient and move across areas, or when reconstructing/auditing an existing product structure. Do not use for product-strategy or intention discovery, detailed screen composition, visual styling, component implementation, or local UI tweaks.
 ---
 
 # Information Architect

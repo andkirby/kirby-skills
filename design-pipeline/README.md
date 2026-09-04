@@ -34,7 +34,9 @@ All specialist skills use conditional divergence and lightweight validation rath
 
 ## Install
 
-This directory is an [Agent Plugins](https://agent-plugins.org) 1.1.0 package; the skills are discovered from `skills/`. Install it with any conformant client, e.g. from the [kirby-skills](https://github.com/andkirby/kirby-skills) repository.
+This directory is a plugin package discovered through the `marketplace.json` at the repository root. In ZCode: **Settings → Plugin Management → Discover → `+`**, add the repository root (`kirby-skills`) as a local marketplace, then install `design-pipeline`.
+
+Two manifests describe the package: root `plugin.json` follows the [Agent Plugins](https://agent-plugins.org) 1.1.0 spec (skills discovered from `skills/`), and `.zcode-plugin/plugin.json` is the ZCode-native manifest. Keep them in sync when adding skills or bumping the version.
 
 ## License
 

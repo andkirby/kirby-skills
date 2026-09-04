@@ -1,0 +1,20 @@
+{
+  "name": "kirby-skills",
+  "plugins": [
+    {
+      "name": "design-pipeline",
+      "source": "./design-pipeline",
+      "description": "Design pipeline skills: routing and stage-gate orchestration, product intent, information architecture, UX surface specification, and cross-cutting design-system architecture.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Kirby Rs"
+      },
+      "keywords": [
+        "design",
+        "ux",
+        "pipeline",
+        "orchestration"
+      ]
+    }
+  ]
+}

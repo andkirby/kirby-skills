@@ -1,0 +1,21 @@
+{
+  "name": "design-pipeline",
+  "version": "0.1.0",
+  "description": "Design pipeline skills: routing and stage-gate orchestration, product intent, information architecture, UX surface specification, and cross-cutting design-system architecture.",
+  "author": {
+    "name": "Kirby Rs",
+    "url": "https://github.com/andkirby"
+  },
+  "license": "MIT",
+  "keywords": [
+    "design",
+    "ux",
+    "product-intent",
+    "information-architecture",
+    "design-system",
+    "specification",
+    "orchestration",
+    "pipeline"
+  ],
+  "skills": "skills"
+}
